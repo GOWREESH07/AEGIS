@@ -1,0 +1,159 @@
+{
+  "scan_id": "7a81d9ae-e50",
+  "url": "https://github.com/psf/requests",
+  "repo_owner": "psf",
+  "repo_name": "requests",
+  "commit_sha": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+  "scanned_at": "2026-10-25T15:20:20.000118+00:00",
+  "proneness_pct": 14.3,
+  "raw_weighted_pct": 14.3,
+  "critical_floor_applied": false,
+  "risk_band": "Low",
+  "score_arithmetic": "(0.00\u00d71.5 + 0.57\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.14 \u2192 14.3%",
+  "coverage_pct": 99.2,
+  "files_analysed": 122,
+  "files_eligible": 123,
+  "analysts": [
+    {
+      "analyst": "cicd",
+      "name": "CI/CD & Agent-Workflow Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    },
+    {
+      "analyst": "supply_chain",
+      "name": "Supply-Chain Analyst",
+      "weight": 1.0,
+      "score": 0.5701,
+      "findings_count": 4,
+      "formula_detail": "1 - [(1 - 0.30\u00d71.00) \u00d7 (1 - 0.15\u00d71.00) \u00d7 (1 - 0.15\u00d71.00) \u00d7 (1 - 0.15\u00d71.00)] = 0.57"
+    },
+    {
+      "analyst": "ai_surface",
+      "name": "AI-Surface Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    }
+  ],
+  "asi_heatmap": {
+    "ASI01": 0,
+    "ASI02": 0,
+    "ASI03": 0,
+    "ASI04": 4,
+    "ASI05": 0,
+    "ASI06": 0,
+    "ASI07": 0,
+    "ASI08": 0,
+    "ASI09": 0,
+    "ASI10": 0
+  },
+  "findings": [
+    {
+      "check_id": "B4",
+      "analyst": "supply_chain",
+      "title": "Known-vulnerable dependency version detected via OSV.dev",
+      "severity": "high",
+      "severity_weight": 0.3,
+      "confidence": 1.0,
+      "file": "requirements-dev.txt",
+      "line": 2,
+      "evidence": "pytest@2.8.0 -> GHSA-6w46-j5rx-g56g (Vulnerability GHSA-6w46-j5rx-g56g reported by OSV.dev, CVSS 7.5)",
+      "why_it_matters": "Dependency `pytest` version `2.8.0` has a known advisory `GHSA-6w46-j5rx-g56g` reported by OSV.dev.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": null
+    },
+    {
+      "check_id": "B4",
+      "analyst": "supply_chain",
+      "title": "Known-vulnerable dependency version detected via OSV.dev",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": "requirements-dev.txt",
+      "line": 2,
+      "evidence": "pytest@2.8.0 -> PYSEC-2026-1845 (Vulnerability PYSEC-2026-1845 reported by OSV.dev, CVSS 5.5)",
+      "why_it_matters": "Dependency `pytest` version `2.8.0` has a known advisory `PYSEC-2026-1845` reported by OSV.dev.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": null
+    },
+    {
+      "check_id": "B5",
+      "analyst": "supply_chain",
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": "pyproject.toml",
+      "line": 1,
+      "evidence": "No lockfile (Pipfile.lock, package-lock.json, pnpm-lock.yaml, poetry.lock, uv.lock, yarn.lock) found in repository",
+      "why_it_matters": "Without a committed lockfile, installs resolve the latest transitive versions at build time, exposing CI and developers to newly published malicious releases.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "Shai-Hulud worm / cline@2.3.0"
+    },
+    {
+      "check_id": "B5",
+      "analyst": "supply_chain",
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": "requirements-dev.txt",
+      "line": 2,
+      "evidence": "pytest>=2.8.0",
+      "why_it_matters": "Unpinned Python dependency specification allows floating installs without hash or version pinning.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "Shai-Hulud worm / cline@2.3.0"
+    }
+  ],
+  "improvements": [
+    {
+      "finding_check_id": "B4",
+      "file": "requirements-dev.txt",
+      "line": 2,
+      "title": "Known-vulnerable dependency version detected via OSV.dev",
+      "severity": "high",
+      "description": "Upgrade the vulnerable dependency to a patched release verified against OSV.dev advisories.",
+      "snippet": "# Upgrade to patched version:\n# npm: \"lodash\": \"4.17.21\", \"axios\": \"1.7.7\", \"minimist\": \"1.2.8\"\n# PyPI: pyyaml==6.0.2, urllib3==2.2.3, jinja2==3.1.4",
+      "projected_score_pct": 6.9,
+      "score_reduction_pct": 7.4
+    },
+    {
+      "finding_check_id": "B5",
+      "file": "pyproject.toml",
+      "line": 1,
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "description": "Commit a deterministic lockfile (`package-lock.json`, `uv.lock`, or `poetry.lock`) and pin exact dependency versions.",
+      "snippet": "# Generate and commit lockfile:\nnpm i --package-lock-only --ignore-scripts\n# In CI use deterministic install:\nnpm ci --ignore-scripts",
+      "projected_score_pct": 12.4,
+      "score_reduction_pct": 1.9
+    },
+    {
+      "finding_check_id": "B5",
+      "file": "requirements-dev.txt",
+      "line": 2,
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "description": "Commit a deterministic lockfile (`package-lock.json`, `uv.lock`, or `poetry.lock`) and pin exact dependency versions.",
+      "snippet": "# Generate and commit lockfile:\nnpm i --package-lock-only --ignore-scripts\n# In CI use deterministic install:\nnpm ci --ignore-scripts",
+      "projected_score_pct": 12.4,
+      "score_reduction_pct": 1.9
+    }
+  ],
+  "projected_score_all_high_impact_pct": 9.6,
+  "summary_text": "Repository `psf/requests` has an AI-attack proneness score of **14.3% (Low Risk)** based on 4 finding(s) (0 critical, 1 high, 3 medium, 0 low). Council breakdown: CI/CD & Agent-Workflow Analyst = 0.00 (\u00d71.5, 0 findings); Supply-Chain Analyst = 0.57 (\u00d71.0, 4 findings); AI-Surface Analyst = 0.00 (\u00d71.5, 0 findings). Formula: `(0.00\u00d71.5 + 0.57\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.14 \u2192 14.3%`. Primary OWASP Agentic Top-10 (2026) surfaces triggered: ASI04 (Agentic Supply-Chain Compromise).",
+  "llm_summary_text": null,
+  "cached": true
+}

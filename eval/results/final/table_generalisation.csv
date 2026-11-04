@@ -1,0 +1,10 @@
+measurement_mode,stage,stage_name,trials,detected_count,evaded_count,detection_rate_pct,ci95_low_pct,ci95_high_pct
+in_process_simulation,1,RECON,30,5,25,16.67,7.34,33.56
+in_process_simulation,2,ADAPT,30,18,12,60.0,42.32,75.41
+in_process_simulation,3,AILM,30,15,15,50.0,33.15,66.85
+in_process_simulation,4,LATERAL,30,30,0,100.0,88.65,100.0
+in_process_simulation,5,EXEC,30,21,9,70.0,52.12,83.34
+in_process_simulation,6,MCP_POISON,30,20,10,66.67,48.78,80.77
+in_process_simulation,7,RAG_INJECT,30,23,7,76.67,59.07,88.21
+in_process_simulation,8,SLOPSQUAT,30,12,18,40.0,24.59,57.68
+in_process_simulation,9,CRED_HARVEST,30,17,13,56.67,39.2,72.62

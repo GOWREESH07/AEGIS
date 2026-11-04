@@ -1,0 +1,13 @@
+name: Triage
+on:
+  issues:
+permissions:
+  issues: read
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cache@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: ~/.cache/pip
+          key: shared-build-cache-${{ runner.os }}

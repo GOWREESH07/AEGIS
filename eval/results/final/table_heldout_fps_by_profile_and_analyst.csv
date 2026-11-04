@@ -1,0 +1,4 @@
+measurement_mode,traffic_profile,causing_analysts,fp_count,share_of_17_fps_pct,fpr_contribution_pct
+in_process_simulation,multi_endpoint_sdk_client (50 windows in held-out set; 0/200 FPs in other 4 profiles),NetworkAnalyst + AIBehaviorAnalyst (4–5 distinct endpoints at low/moderate rate),8,47.06,3.2
+in_process_simulation,multi_endpoint_sdk_client (50 windows in held-out set; 0/200 FPs in other 4 profiles),IdentityAnalyst + AIBehaviorAnalyst (JSON + text/plain healthcheck MIME pair),8,47.06,3.2
+in_process_simulation,multi_endpoint_sdk_client (50 windows in held-out set; 0/200 FPs in other 4 profiles),Network + Identity + AI-Behaviour (5-endpoint poll + JSON/text/plain mix),1,5.88,0.4

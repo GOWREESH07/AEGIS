@@ -1,0 +1,12 @@
+name: Open Agent
+on:
+  issue_comment:
+permissions:
+  contents: read
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          allowed_non_write_users: "*"

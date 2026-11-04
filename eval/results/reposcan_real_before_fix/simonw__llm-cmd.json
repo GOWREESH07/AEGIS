@@ -1,0 +1,277 @@
+{
+  "scan_id": "664c6948-a96",
+  "url": "https://github.com/simonw/llm-cmd",
+  "repo_owner": "simonw",
+  "repo_name": "llm-cmd",
+  "commit_sha": "1db3a14fdf2b9a01d1af53689346b12fb3c6dd06",
+  "scanned_at": "2026-10-25T14:49:39.684329+00:00",
+  "proneness_pct": 41.5,
+  "raw_weighted_pct": 41.5,
+  "critical_floor_applied": false,
+  "risk_band": "Moderate",
+  "score_arithmetic": "(0.68\u00d71.5 + 0.19\u00d71.0 + 0.30\u00d71.5) / 4.0 = 0.42 \u2192 41.5%",
+  "coverage_pct": 100.0,
+  "files_analysed": 8,
+  "files_eligible": 8,
+  "analysts": [
+    {
+      "analyst": "cicd",
+      "name": "CI/CD & Agent-Workflow Analyst",
+      "weight": 1.5,
+      "score": 0.6794,
+      "findings_count": 7,
+      "formula_detail": "1 - [(1 - 0.15\u00d71.00) \u00d7 (1 - 0.15\u00d71.00) \u00d7 (1 - 0.15\u00d71.00) \u00d7 (1 - 0.15\u00d71.00) \u00d7 ... (7 findings)] = 0.68"
+    },
+    {
+      "analyst": "supply_chain",
+      "name": "Supply-Chain Analyst",
+      "weight": 1.0,
+      "score": 0.1925,
+      "findings_count": 2,
+      "formula_detail": "1 - [(1 - 0.15\u00d71.00) \u00d7 (1 - 0.05\u00d71.00)] = 0.19"
+    },
+    {
+      "analyst": "ai_surface",
+      "name": "AI-Surface Analyst",
+      "weight": 1.5,
+      "score": 0.3,
+      "findings_count": 1,
+      "formula_detail": "1 - [(1 - 0.30\u00d71.00)] = 0.30"
+    }
+  ],
+  "asi_heatmap": {
+    "ASI01": 0,
+    "ASI02": 0,
+    "ASI03": 0,
+    "ASI04": 9,
+    "ASI05": 1,
+    "ASI06": 0,
+    "ASI07": 0,
+    "ASI08": 0,
+    "ASI09": 0,
+    "ASI10": 0
+  },
+  "findings": [
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/test.yml",
+      "line": 15,
+      "evidence": "uses: actions/checkout@v4",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/test.yml",
+      "line": 17,
+      "evidence": "uses: actions/setup-python@v5",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/publish.yml",
+      "line": 17,
+      "evidence": "uses: actions/checkout@v4",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/publish.yml",
+      "line": 19,
+      "evidence": "uses: actions/setup-python@v5",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/publish.yml",
+      "line": 17,
+      "evidence": "uses: actions/checkout@v4",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/publish.yml",
+      "line": 19,
+      "evidence": "uses: actions/setup-python@v5",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "A6",
+      "analyst": "cicd",
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": ".github/workflows/publish.yml",
+      "line": 51,
+      "evidence": "uses: pypa/gh-action-pypi-publish@release/v1",
+      "why_it_matters": "Mutable tags (such as `@v4` or `@main`) can be force-pushed by a compromised upstream maintainer to inject credential-stealing payloads into CI runs.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "tj-actions/changed-files (Mar 2025), aquasecurity/trivy-action (Mar 2026)"
+    },
+    {
+      "check_id": "B5",
+      "analyst": "supply_chain",
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "severity_weight": 0.15,
+      "confidence": 1.0,
+      "file": "pyproject.toml",
+      "line": 1,
+      "evidence": "No lockfile (Pipfile.lock, package-lock.json, pnpm-lock.yaml, poetry.lock, uv.lock, yarn.lock) found in repository",
+      "why_it_matters": "Without a committed lockfile, installs resolve the latest transitive versions at build time, exposing CI and developers to newly published malicious releases.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": "Shai-Hulud worm / cline@2.3.0"
+    },
+    {
+      "check_id": "B6",
+      "analyst": "supply_chain",
+      "title": "Missing automated dependency update config (Dependabot/Renovate) and `SECURITY.md`",
+      "severity": "low",
+      "severity_weight": 0.05,
+      "confidence": 1.0,
+      "file": "README.md",
+      "line": 1,
+      "evidence": "Neither `.github/dependabot.yml` / `renovate.json` nor `SECURITY.md` present",
+      "why_it_matters": "Lack of automated dependency hygiene and a vulnerability disclosure policy delays remediation when upstream dependencies are compromised.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": null
+    },
+    {
+      "check_id": "C4",
+      "analyst": "ai_surface",
+      "title": "LLM output passed directly to `eval`, `exec`, `subprocess(shell=True)`, `os.system`, or raw SQL",
+      "severity": "high",
+      "severity_weight": 0.3,
+      "confidence": 1.0,
+      "file": "llm_cmd.py",
+      "line": 44,
+      "evidence": "output = subprocess.check_output(",
+      "why_it_matters": "`subprocess` invoked with `shell=True` enables command injection when arguments contain LLM-generated or user-controlled strings.",
+      "asi_ids": [
+        "ASI05"
+      ],
+      "incident_ref": "OWASP ASI05 Insecure Code Execution"
+    }
+  ],
+  "improvements": [
+    {
+      "finding_check_id": "A6",
+      "file": ".github/workflows/publish.yml",
+      "line": 17,
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "description": "Pin third-party GitHub Actions to an immutable 40-character commit SHA instead of a mutable tag or branch.",
+      "snippet": "# Replace mutable tag with full 40-char commit SHA:\n- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2",
+      "projected_score_pct": 26.5,
+      "score_reduction_pct": 15.0
+    },
+    {
+      "finding_check_id": "C4",
+      "file": "llm_cmd.py",
+      "line": 44,
+      "title": "LLM output passed directly to `eval`, `exec`, `subprocess(shell=True)`, `os.system`, or raw SQL",
+      "severity": "high",
+      "description": "Replace `eval`/`exec`/`subprocess(..., shell=True)` on LLM output with a strict schema parser (Pydantic) and argument-list subprocess calls (`shell=False`).",
+      "snippet": "# Replace eval(llm_response) / subprocess.run(..., shell=True):\nimport json, subprocess\nparsed = AllowedCommandModel.model_validate_json(llm_response)\nsubprocess.run([\"/usr/bin/echo\", parsed.safe_arg], shell=False, check=True)",
+      "projected_score_pct": 30.3,
+      "score_reduction_pct": 11.2
+    },
+    {
+      "finding_check_id": "A6",
+      "file": ".github/workflows/test.yml",
+      "line": 15,
+      "title": "Third-party GitHub Action pinned to mutable tag/branch instead of 40-char SHA",
+      "severity": "medium",
+      "description": "Pin third-party GitHub Actions to an immutable 40-character commit SHA instead of a mutable tag or branch.",
+      "snippet": "# Replace mutable tag with full 40-char commit SHA:\n- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2",
+      "projected_score_pct": 36.9,
+      "score_reduction_pct": 4.6
+    },
+    {
+      "finding_check_id": "B5",
+      "file": "pyproject.toml",
+      "line": 1,
+      "title": "Missing dependency lockfile or unpinned dependency version ranges",
+      "severity": "medium",
+      "description": "Commit a deterministic lockfile (`package-lock.json`, `uv.lock`, or `poetry.lock`) and pin exact dependency versions.",
+      "snippet": "# Generate and commit lockfile:\nnpm i --package-lock-only --ignore-scripts\n# In CI use deterministic install:\nnpm ci --ignore-scripts",
+      "projected_score_pct": 38.0,
+      "score_reduction_pct": 3.5
+    },
+    {
+      "finding_check_id": "B6",
+      "file": "README.md",
+      "line": 1,
+      "title": "Missing automated dependency update config (Dependabot/Renovate) and `SECURITY.md`",
+      "severity": "low",
+      "description": "Add `.github/dependabot.yml` for automated security updates and a `SECURITY.md` disclosure policy.",
+      "snippet": "# .github/dependabot.yml\nversion: 2\nupdates:\n  - package-ecosystem: \"github-actions\"\n    directory: \"/\"\n    schedule:\n      interval: \"weekly\" ",
+      "projected_score_pct": 40.5,
+      "score_reduction_pct": 1.0
+    }
+  ],
+  "projected_score_all_high_impact_pct": 30.3,
+  "summary_text": "Repository `simonw/llm-cmd` has an AI-attack proneness score of **41.5% (Moderate Risk)** based on 10 finding(s) (0 critical, 1 high, 8 medium, 1 low). Council breakdown: CI/CD & Agent-Workflow Analyst = 0.68 (\u00d71.5, 7 findings); Supply-Chain Analyst = 0.19 (\u00d71.0, 2 findings); AI-Surface Analyst = 0.30 (\u00d71.5, 1 findings). Formula: `(0.68\u00d71.5 + 0.19\u00d71.0 + 0.30\u00d71.5) / 4.0 = 0.42 \u2192 41.5%`. Primary OWASP Agentic Top-10 (2026) surfaces triggered: ASI04 (Agentic Supply-Chain Compromise), ASI05 (Insecure Code Execution & Output Handling).",
+  "llm_summary_text": null,
+  "cached": false
+}

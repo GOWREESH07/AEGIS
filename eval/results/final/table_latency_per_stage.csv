@@ -1,0 +1,10 @@
+measurement_mode,stage,stage_name,pass1_mean_ms,pass1_sd_ms,pass1_median_ms,pass1_p95_ms,pass1_max_ms,pass2_mean_ms,pass2_sd_ms,pass2_median_ms,pass2_p95_ms,pass2_max_ms,self_healing_delta_mean_ms,council_raw_mean_ms,council_raw_max_ms,floor_0_1ms_raised_count
+in_process_simulation,1,RECON,14.81,2.64,15.21,18.2,19.0,8.65,1.58,8.75,11.0,11.14,-6.16,0.0348,0.1526,27/30
+in_process_simulation,2,ADAPT,15.56,2.84,15.96,19.62,20.84,8.93,1.59,9.11,11.19,11.64,-6.63,0.0283,0.1037,29/30
+in_process_simulation,3,AILM,16.43,2.91,16.34,20.54,20.79,9.54,1.65,9.62,11.88,12.23,-6.89,0.0215,0.0546,30/30
+in_process_simulation,4,LATERAL,17.18,2.78,17.54,20.59,21.3,9.96,1.61,10.16,11.83,12.02,-7.22,0.0264,0.0931,30/30
+in_process_simulation,5,EXEC,13.79,3.25,13.55,18.34,18.89,8.04,1.74,7.89,10.31,10.38,-5.75,0.0326,0.1439,29/30
+in_process_simulation,6,MCP_POISON,14.72,2.55,14.3,18.6,18.94,8.56,1.46,8.51,10.52,11.25,-6.16,0.029,0.1818,29/30
+in_process_simulation,7,RAG_INJECT,15.67,2.7,16.05,19.47,20.24,9.13,1.42,9.13,11.37,11.54,-6.54,0.0248,0.0873,30/30
+in_process_simulation,8,SLOPSQUAT,15.46,2.54,15.22,19.66,19.98,9.18,1.62,8.96,12.09,12.33,-6.28,0.0326,0.1213,29/30
+in_process_simulation,9,CRED_HARVEST,16.88,2.81,16.42,21.07,21.38,9.9,1.56,9.5,12.22,12.54,-6.98,0.0305,0.1254,28/30

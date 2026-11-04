@@ -1,0 +1,12 @@
+name: Publish
+on:
+  release:
+permissions:
+  contents: read
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+jobs:
+  pub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683

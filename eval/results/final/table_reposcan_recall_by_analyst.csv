@@ -1,0 +1,5 @@
+measurement_mode,analyst,planted_issues,detected_issues,missed_issues,recall_pct,recall_ci95_low_pct,recall_ci95_high_pct,missed_checks
+static_local_repository_scan,CI/CD & Agent-Workflow Analyst (A1–A8),8,8,0,100.0,67.56,100.0,None
+static_local_repository_scan,Supply-Chain Analyst (B1–B6),8,7,1,87.5,52.91,97.76,B3 (repo_10_subtle_poetry_and_dynamic_eval)
+static_local_repository_scan,AI-Surface Analyst (C1–C9),11,10,1,90.91,62.26,98.38,C5 (repo_09_subtle_multiline_and_setup)
+static_local_repository_scan,"Overall RepoScan (All 3 Analysts, 10 Seeded Repos)",27,25,2,92.59,76.63,97.94,C5 (repo_09_subtle_multiline_and_setup); B3 (repo_10_subtle_poetry_and_dynamic_eval)

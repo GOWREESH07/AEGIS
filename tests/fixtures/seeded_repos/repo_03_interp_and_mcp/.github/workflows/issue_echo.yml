@@ -1,0 +1,11 @@
+name: Issue Echo
+on:
+  issues:
+permissions:
+  issues: read
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print body
+        run: echo "${{ github.event.issue.body }}"

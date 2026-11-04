@@ -1,0 +1,6 @@
+measurement_mode,stage_id,stage_name,n_trials,interception_rate,mean_ms,sd_ms,median_ms,p95_ms,max_ms,council_verdict_mean_ms,timer_floor_hits_verdict
+live_docker_stack,1,RECON,30,30/30 (100.0%),20.82,28.63,14.78,22.8,171.82,0.1,30/30
+live_docker_stack,2,ADAPT_PARSE,30,30/30 (100.0%),2.68,1.82,2.29,3.12,12.19,0.1,30/30
+live_docker_stack,3,AILM,30,30/30 (100.0%),3.46,1.62,3.02,6.73,8.73,0.1,26/30
+live_docker_stack,4,LATERAL,30,30/30 (100.0%),47.82,10.37,45.25,58.21,98.77,0.1,28/30
+live_docker_stack,5,EXEC,30,30/30 (100.0%),4.91,4.88,3.84,7.06,29.16,0.1,26/30

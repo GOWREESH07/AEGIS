@@ -1,0 +1,39 @@
+{
+  "npm": [
+    "react", "react-dom", "next", "vue", "angular", "svelte", "express", "fastify",
+    "koa", "axios", "lodash", "underscore", "moment", "dayjs", "date-fns", "chalk",
+    "commander", "yargs", "inquirer", "dotenv", "cross-env", "rimraf", "mkdirp",
+    "glob", "minimatch", "chokidar", "ws", "socket.io", "uuid", "nanoid", "zod",
+    "joi", "yup", "typescript", "vite", "webpack", "rollup", "esbuild", "parcel",
+    "babel-core", "eslint", "prettier", "jest", "vitest", "mocha", "chai", "cypress",
+    "playwright", "puppeteer", "tailwindcss", "postcss", "autoprefixer", "sass",
+    "less", "styled-components", "emotion", "redux", "zustand", "mobx", "rxjs",
+    "graphql", "apollo-client", "prisma", "typeorm", "sequelize", "mongoose", "pg",
+    "mysql2", "redis", "ioredis", "bull", "jsonwebtoken", "bcrypt", "bcryptjs",
+    "passport", "helmet", "cors", "body-parser", "multer", "nodemailer", "winston",
+    "pino", "morgan", "debug", "semver", "cheerio", "jsdom", "marked", "highlight.js",
+    "three", "d3", "chart.js", "recharts", "openai", "@anthropic-ai/sdk", "langchain",
+    "@langchain/core", "@modelcontextprotocol/sdk", "ai", "llamaindex", "chromadb"
+  ],
+  "pypi": [
+    "requests", "urllib3", "httpx", "aiohttp", "fastapi", "uvicorn", "starlette",
+    "flask", "django", "tornado", "bottle", "pydantic", " marshmallow", "attrs",
+    "dataclasses-json", "sqlalchemy", "alembic", "psycopg2", " psycopg2-binary",
+    "asyncpg", "pymysql", "pymongo", "motor", "redis", "aiosqlite", "celery",
+    "dramatiq", "rq", "numpy", "scipy", "pandas", "polars", "matplotlib", "seaborn",
+    "plotly", "scikit-learn", "torch", "torchvision", "tensorflow", "keras", "jax",
+    "transformers", "datasets", "accelerate", "diffusers", "safetensors", "tokenizers",
+    "openai", "anthropic", "google-generativeai", "langchain", "langchain-core",
+    "langchain-community", "langchain-openai", "llama-index", "chromadb", "qdrant-client",
+    "pinecone-client", "weaviate-client", "faiss-cpu", "sentence-transformers",
+    "tiktoken", "litellm", "dspy-ai", "crewai", "autogen", "mcp", "fastmcp",
+    "pytest", "pytest-asyncio", "unittest2", "coverage", "hypothesis", "tox",
+    "black", "ruff", "flake8", "isort", "mypy", "pylint", "bandit", "safety",
+    "pipenv", "poetry", "uv", "virtualenv", "setuptools", "wheel", "twine",
+    "build", "click", "typer", "rich", "tqdm", "colorama", "loguru", "structlog",
+    "python-dotenv", "pyyaml", "toml", "tomli", "orjson", "ujson", "msgpack",
+    "cryptography", "pyjwt", "passlib", "bcrypt", "paramiko", "boto3", "botocore",
+    "google-cloud-storage", "azure-storage-blob", "pillow", "opencv-python",
+    "beautifulsoup4", "lxml", "scrapy", "selenium", "playwright", "pypdf", "pymupdf"
+  ]
+}

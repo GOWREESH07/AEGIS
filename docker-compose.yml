@@ -1,0 +1,178 @@
+
+networks:
+  aegis_net:
+    driver: bridge
+  reposcan_net:
+    driver: bridge
+
+volumes:
+  redis_data:
+  aegis_data:
+  staging_files:
+  reposcan_data:
+
+services:
+  # ─────────────────────────────────────────────
+  # Redis — shared state store
+  # ─────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: aegis_redis
+    networks:
+      - aegis_net
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # Target — toy vulnerable FastAPI service
+  # ─────────────────────────────────────────────
+  target:
+    build:
+      context: ./target
+      dockerfile: Dockerfile
+    container_name: aegis_target
+    networks:
+      - aegis_net
+    volumes:
+      - staging_files:/app/staging
+    environment:
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/api/ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    # NOT exposed to host — only reachable through AEGIS proxy
+    expose:
+      - "8001"
+      - "8002"
+
+  # ─────────────────────────────────────────────
+  # RepoScan — Isolated static repository scanner
+  # ─────────────────────────────────────────────
+  reposcan:
+    build:
+      context: ./reposcan
+      dockerfile: Dockerfile
+    container_name: aegis_reposcan
+    networks:
+      - reposcan_net
+    volumes:
+      - reposcan_data:/data
+      - ./tests/fixtures:/app/fixtures:ro
+    environment:
+      REPOSCAN_DB_PATH: /data/reposcan.db
+      REPOSCAN_FIXTURES_ROOT: /app/fixtures
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      REPOSCAN_LLM: ${REPOSCAN_LLM:-0}
+    expose:
+      - "8004"
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # AEGIS — defense engine + reverse proxy
+  # ─────────────────────────────────────────────
+  aegis:
+    build:
+      context: ./aegis
+      dockerfile: Dockerfile
+    container_name: aegis_engine
+    networks:
+      - aegis_net
+      - reposcan_net
+    volumes:
+      - aegis_data:/data
+      - ./reposcan:/app/reposcan_local:ro
+      - ./tests/fixtures:/app/fixtures:ro
+    environment:
+      REDIS_URL: redis://redis:6379
+      TARGET_URL: http://target:8001
+      ATTACKER_URL: http://attacker:8003
+      REPOSCAN_URL: http://reposcan:8004
+      REPOSCAN_FIXTURES_ROOT: /app/fixtures
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+      target:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/aegis/status')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # Attacker — JadePuffer-sim (triggered via API)
+  # ─────────────────────────────────────────────
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: aegis_attacker
+    networks:
+      - aegis_net
+    volumes:
+      - staging_files:/shared/staging
+    environment:
+      TARGET_PROXY_URL: http://aegis:8000
+      TARGET_DIRECT_URL: http://target:8001
+      INTERNAL_HOST: target
+      INTERNAL_PORT: "8002"
+      STAGING_PATH: /shared/staging
+    ports:
+      - "8003:8003"
+    depends_on:
+      aegis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # Frontend A — Attack Console
+  # ─────────────────────────────────────────────
+  frontend-attacker:
+    build:
+      context: ./frontend-attacker
+      dockerfile: Dockerfile
+    container_name: aegis_frontend_attacker
+    networks:
+      - aegis_net
+    environment:
+      VITE_ATTACKER_URL: http://localhost:8003
+      VITE_ATTACKER_WS: ws://localhost:8003
+    ports:
+      - "5173:80"
+    depends_on:
+      - attacker
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────
+  # Frontend B — AEGIS Defense Console
+  # ─────────────────────────────────────────────
+  frontend-defense:
+    build:
+      context: ./frontend-defense
+      dockerfile: Dockerfile
+    container_name: aegis_frontend_defense
+    networks:
+      - aegis_net
+    environment:
+      VITE_AEGIS_URL: http://localhost:8000
+      VITE_AEGIS_WS: ws://localhost:8000
+    ports:
+      - "5174:80"
+    depends_on:
+      - aegis
+    restart: unless-stopped

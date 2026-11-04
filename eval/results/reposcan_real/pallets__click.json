@@ -1,0 +1,89 @@
+{
+  "scan_id": "23ca0584-b70",
+  "url": "https://github.com/pallets/click",
+  "repo_owner": "pallets",
+  "repo_name": "click",
+  "commit_sha": "2247b35ea1c47c727d7a06e51fa280e12a863ff6",
+  "scanned_at": "2026-10-25T14:55:02.291555+00:00",
+  "proneness_pct": 1.2,
+  "raw_weighted_pct": 1.2,
+  "critical_floor_applied": false,
+  "risk_band": "Low",
+  "score_arithmetic": "(0.00\u00d71.5 + 0.05\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.01 \u2192 1.2%",
+  "coverage_pct": 100.0,
+  "files_analysed": 176,
+  "files_eligible": 176,
+  "analysts": [
+    {
+      "analyst": "cicd",
+      "name": "CI/CD & Agent-Workflow Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    },
+    {
+      "analyst": "supply_chain",
+      "name": "Supply-Chain Analyst",
+      "weight": 1.0,
+      "score": 0.05,
+      "findings_count": 1,
+      "formula_detail": "1 - [(1 - 0.05\u00d71.00)] = 0.05"
+    },
+    {
+      "analyst": "ai_surface",
+      "name": "AI-Surface Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    }
+  ],
+  "asi_heatmap": {
+    "ASI01": 0,
+    "ASI02": 0,
+    "ASI03": 0,
+    "ASI04": 1,
+    "ASI05": 0,
+    "ASI06": 0,
+    "ASI07": 0,
+    "ASI08": 0,
+    "ASI09": 0,
+    "ASI10": 0
+  },
+  "findings": [
+    {
+      "check_id": "B6",
+      "analyst": "supply_chain",
+      "title": "Missing automated dependency update config (Dependabot/Renovate) and `SECURITY.md`",
+      "severity": "low",
+      "severity_weight": 0.05,
+      "confidence": 1.0,
+      "file": "README.md",
+      "line": 1,
+      "evidence": "Neither `.github/dependabot.yml` / `renovate.json` nor `SECURITY.md` present",
+      "why_it_matters": "Lack of automated dependency hygiene and a vulnerability disclosure policy delays remediation when upstream dependencies are compromised.",
+      "asi_ids": [
+        "ASI04"
+      ],
+      "incident_ref": null
+    }
+  ],
+  "improvements": [
+    {
+      "finding_check_id": "B6",
+      "file": "README.md",
+      "line": 1,
+      "title": "Missing automated dependency update config (Dependabot/Renovate) and `SECURITY.md`",
+      "severity": "low",
+      "description": "Add `.github/dependabot.yml` for automated security updates and a `SECURITY.md` disclosure policy.",
+      "snippet": "# .github/dependabot.yml\nversion: 2\nupdates:\n  - package-ecosystem: \"github-actions\"\n    directory: \"/\"\n    schedule:\n      interval: \"weekly\" ",
+      "projected_score_pct": 0.0,
+      "score_reduction_pct": 1.2
+    }
+  ],
+  "projected_score_all_high_impact_pct": 1.2,
+  "summary_text": "Repository `pallets/click` has an AI-attack proneness score of **1.2% (Low Risk)** based on 1 finding(s) (0 critical, 0 high, 0 medium, 1 low). Council breakdown: CI/CD & Agent-Workflow Analyst = 0.00 (\u00d71.5, 0 findings); Supply-Chain Analyst = 0.05 (\u00d71.0, 1 findings); AI-Surface Analyst = 0.00 (\u00d71.5, 0 findings). Formula: `(0.00\u00d71.5 + 0.05\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.01 \u2192 1.2%`. Primary OWASP Agentic Top-10 (2026) surfaces triggered: ASI04 (Agentic Supply-Chain Compromise).",
+  "llm_summary_text": null,
+  "cached": false
+}

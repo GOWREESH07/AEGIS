@@ -1,0 +1,33 @@
+measurement_mode,component,id,atlas_id,atlas_name,owasp_asi_id,owasp_asi_name
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 01 (RECON),AML.T0006,Active Scanning,ASI01,Agent Goal Hijack
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 02 (ADAPT),AML.T0043,Craft Adversarial Data,ASI05,Unexpected Code Execution
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 03 (AILM),AML.T0051,LLM Prompt Injection,ASI01,Agent Goal Hijack
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 04 (LATERAL),AML.T0029,Denial of Service,ASI02,Tool Misuse & Exploitation
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 05 (EXEC),AML.T0048,External Harms,ASI05,Unexpected Code Execution
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 06 (MCP_POISON),AML.T0054,LLM Plugin Compromise,ASI02,Tool Misuse & Exploitation
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 07 (RAG_INJECT),AML.T0051.001,Indirect Prompt Injection,ASI06,Memory & Context Poisoning
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 08 (SLOPSQUAT),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,Runtime Pipeline (9-Stage Kill Chain),Stage 09 (CRED_HARVEST),AML.T0055,Unsecured Credentials,ASI10,Rogue Agents / Credential Exfiltration
+static_reference_mapping,RepoScan Static Check,A1 (pull_request_target with untrusted checkout),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,A2 (Untrusted GitHub context interpolated in run:/prompt),AML.T0051.001,Indirect Prompt Injection,ASI01,Agent Goal Hijack
+static_reference_mapping,RepoScan Static Check,A3 (AI coding action on untrusted trigger without author gate),AML.T0054,LLM Plugin Compromise,ASI03,Identity & Privilege Abuse
+static_reference_mapping,RepoScan Static Check,A4 (AI action with write-all or contents/pull-requests: write),AML.T0054,LLM Plugin Compromise,ASI03,Identity & Privilege Abuse
+static_reference_mapping,RepoScan Static Check,A5 (Missing top-level permissions: block in workflow),AML.T0010,ML Supply Chain Compromise,ASI03,Identity & Privilege Abuse
+static_reference_mapping,RepoScan Static Check,A6 (Third-party Action not pinned to 40-char SHA),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,A7 (Shared cache key across low- and high-privilege workflows),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,A8 (Broad publishing secrets exposed to all workflows/branches),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,B1 (Install-time execution hooks in manifest),AML.T0010,ML Supply Chain Compromise,ASI05,Unexpected Code Execution
+static_reference_mapping,RepoScan Static Check,B2 (Package absent from PyPI/npm registry (slopsquat candidate)),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,B3 (Levenshtein distance 1-2 from top package (typosquat)),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,B4 (Known vulnerable dependencies via OSV.dev advisory lookup),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,B5 (Unpinned dependency specifiers or missing lockfile),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,B6 (Missing dependabot/renovate and SECURITY.md),AML.T0010,ML Supply Chain Compromise,ASI04,Agentic Supply Chain Vulnerabilities
+static_reference_mapping,RepoScan Static Check,C1 (Instruction files containing hidden comments/zero-width chars),AML.T0051.001,Indirect Prompt Injection,ASI01,Agent Goal Hijack
+static_reference_mapping,RepoScan Static Check,C2 (Instruction files with shell/credential exfiltration directives),AML.T0051.001,Indirect Prompt Injection,ASI01,Agent Goal Hijack
+static_reference_mapping,RepoScan Static Check,C3 (MCP server config using shell/remote-fetch transport),AML.T0054,LLM Plugin Compromise,ASI02,Tool Misuse & Exploitation
+static_reference_mapping,RepoScan Static Check,C4 (Agent tool handler passing LLM output to subprocess/eval/exec),AML.T0048,External Harms,ASI05,Unexpected Code Execution
+static_reference_mapping,RepoScan Static Check,C5 (System prompt concatenating raw user/file/web content),AML.T0051,LLM Prompt Injection,ASI01,Agent Goal Hijack
+static_reference_mapping,RepoScan Static Check,C6 (Destructive/network agent tool without human confirmation gate),AML.T0054,LLM Plugin Compromise,ASI02,Tool Misuse & Exploitation
+static_reference_mapping,RepoScan Static Check,C7 (RAG ingestion loading remote/unvalidated content without sanitizer),AML.T0051.001,Indirect Prompt Injection,ASI06,Memory & Context Poisoning
+static_reference_mapping,RepoScan Static Check,"C8 (Committed secrets, .env files, or high-entropy tokens)",AML.T0055,Unsecured Credentials,ASI03,Identity & Privilege Abuse
+static_reference_mapping,RepoScan Static Check,C9 (AI SDK usage without prompt-injection guardrail/tests),AML.T0051,LLM Prompt Injection,ASI01,Agent Goal Hijack

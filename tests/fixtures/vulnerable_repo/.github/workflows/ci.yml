@@ -1,0 +1,35 @@
+name: Untrusted PR Target & AI Triage
+on:
+  pull_request_target:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  triage_and_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout untrusted PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Shared cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: shared-pkg-cache-${{ runner.os }}
+
+      - name: Unsafe interpolation in shell
+        run: echo "Triaging issue ${{ github.event.issue.title }}"
+
+      - name: Run Claude Agent on untrusted issue
+        uses: anthropics/claude-code-action@main
+        with:
+          allowed_tools: "Bash,Write,Edit"
+          allowed_non_write_users: "*"
+          prompt: "Fix the issue: ${{ github.event.issue.body }}"

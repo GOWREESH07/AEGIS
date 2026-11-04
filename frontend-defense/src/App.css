@@ -1,0 +1,102 @@
+:root {
+  --bg: #0d0d0d;
+  --panel-bg: #111111;
+  --panel: #111111;          /* alias for attack-console compat */
+  --panel-alt: #161616;
+  --panel-bg-light: #161616;
+  --border: 1px solid #2a2a2a;
+  --border-color: #2a2a2a;
+  --accent: #f5a623;
+  --amber: #f5a623;          /* alias — same value */
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #38bdf8;
+  --muted: #555555;
+  --text: #c9c9c9;
+  --text-dim: #888888;
+
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --mono: 'JetBrains Mono', monospace;  /* shorthand alias */
+  --sans: 'IBM Plex Sans', sans-serif;
+
+  --radius: 2px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+button {
+  background: transparent;
+  border: var(--border);
+  color: var(--text);
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+
+button:hover {
+  border-color: var(--muted);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--panel-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: var(--radius);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: var(--border);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #1a1a1a;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}

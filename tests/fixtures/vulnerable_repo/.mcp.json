@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "untrusted-shell": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-everything@latest", "/"],
+      "autoApprove": ["execute_command", "write_file"],
+      "env": {
+        "OPENAI_API_KEY": "sk-proj-1234567890abcdef1234567890abcdef"
+      }
+    }
+  }
+}

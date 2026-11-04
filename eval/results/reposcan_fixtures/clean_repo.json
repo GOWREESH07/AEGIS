@@ -1,0 +1,60 @@
+{
+  "scan_id": "e7b09c42-46d",
+  "url": "https://github.com/aegis-demo/clean_repo",
+  "repo_owner": "aegis-demo",
+  "repo_name": "clean_repo",
+  "commit_sha": "0000000000000000000000000000000000000000",
+  "scanned_at": "2026-10-25T15:18:57.489634+00:00",
+  "proneness_pct": 0.0,
+  "raw_weighted_pct": 0.0,
+  "critical_floor_applied": false,
+  "risk_band": "Low",
+  "score_arithmetic": "(0.00\u00d71.5 + 0.00\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.00 \u2192 0.0%",
+  "coverage_pct": 100.0,
+  "files_analysed": 8,
+  "files_eligible": 8,
+  "analysts": [
+    {
+      "analyst": "cicd",
+      "name": "CI/CD & Agent-Workflow Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    },
+    {
+      "analyst": "supply_chain",
+      "name": "Supply-Chain Analyst",
+      "weight": 1.0,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    },
+    {
+      "analyst": "ai_surface",
+      "name": "AI-Surface Analyst",
+      "weight": 1.5,
+      "score": 0.0,
+      "findings_count": 0,
+      "formula_detail": "1 - 1.000 = 0.00"
+    }
+  ],
+  "asi_heatmap": {
+    "ASI01": 0,
+    "ASI02": 0,
+    "ASI03": 0,
+    "ASI04": 0,
+    "ASI05": 0,
+    "ASI06": 0,
+    "ASI07": 0,
+    "ASI08": 0,
+    "ASI09": 0,
+    "ASI10": 0
+  },
+  "findings": [],
+  "improvements": [],
+  "projected_score_all_high_impact_pct": 0.0,
+  "summary_text": "Repository `aegis-demo/clean_repo` scored **0.0% (Low Risk)**. All three AEGIS RepoScan analysts reported zero high-risk AI-attack or supply-chain findings. Score arithmetic: `(0.00\u00d71.5 + 0.00\u00d71.0 + 0.00\u00d71.5) / 4.0 = 0.00 \u2192 0.0%`.",
+  "llm_summary_text": null,
+  "cached": false
+}

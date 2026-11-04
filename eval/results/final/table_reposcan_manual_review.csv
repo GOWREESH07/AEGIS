@@ -1,0 +1,22 @@
+measurement_mode,repository,check_id,severity,file,line,evidence,manual_verdict,present_before_fix,present_after_fix,rationale
+static_git_clone,pallets/click,A7,medium,.github/workflows/tests.yaml,58,Shared cache key prefix 'mypy|' between .github/workflows/tests.yaml and .github,FP,True,False,Single workflow file matched against itself as a shared cache prefix
+static_git_clone,pallets/click,B6,low,README.md,1,Neither `.github/dependabot.yml` / `renovate.json` nor `SECURITY.md` present,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,openai/openai-agents-python,A5,high,.github/workflows/issues.yml,1,No top-level `permissions:` block declared in workflow,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,openai/openai-agents-python,A7,medium,.github/workflows/tests.yml,71,Shared cache key prefix 'mypy' between .github/workflows/tests.yml and .github/w,FP,True,False,Single workflow file matched against itself as a shared cache prefix
+static_git_clone,openai/openai-agents-python,B3,medium,examples/realtime/twilio_sip/requirements.txt,4,"httpx2>=2.13.1 (edit distance 1 from ""httpx"")",FP,True,False,Version-suffixed package name (httpx2 vs httpx) flagged by Levenshtein distance=1
+static_git_clone,openai/openai-agents-python,B3,medium,examples/realtime/twilio/requirements.txt,2,"httpx2>=2.13.1 (edit distance 1 from ""httpx"")",FP,True,False,Version-suffixed package name (httpx2 vs httpx) flagged by Levenshtein distance=1
+static_git_clone,openai/openai-agents-python,B5,medium,examples/realtime/twilio_sip/requirements.txt,1,fastapi>=0.143.0,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,openai/openai-agents-python,C4,high,src/agents/extensions/memory/advanced_sqlite_session.py,262,"conn.execute(f""SELECT * FROM {identifier} LIMIT 0"").fetchall()",TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,openai/openai-agents-python,C4,high,src/agents/extensions/sandbox/blaxel/sandbox.py,453,await self._sandbox.process.exec(,FP,True,False,Object method .exec() on Blaxel sandbox client matched Python built-in exec() regex
+static_git_clone,openai/openai-agents-python,C4,high,src/agents/extensions/sandbox/blaxel/sandbox.py,609,self._sandbox.process.exec(,FP,True,False,Object method .exec() on Blaxel sandbox client matched Python built-in exec() regex
+static_git_clone,openai/openai-agents-python,C9,low,LICENSE,1,AI SDK detected without corresponding prompt-injection test suite or evals,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/test.yml,15,uses: actions/checkout@v4,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/test.yml,17,uses: actions/setup-python@v5,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/publish.yml,17,uses: actions/checkout@v4,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/publish.yml,19,uses: actions/setup-python@v5,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/publish.yml,17,uses: actions/checkout@v4,FP (Duplicate),True,False,Duplicate A6 finding emitted for same workflow file and line
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/publish.yml,19,uses: actions/setup-python@v5,FP (Duplicate),True,False,Duplicate A6 finding emitted for same workflow file and line
+static_git_clone,simonw/llm-cmd,A6,medium,.github/workflows/publish.yml,51,uses: pypa/gh-action-pypi-publish@release/v1,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,B5,medium,pyproject.toml,1,"No lockfile (Pipfile.lock, package-lock.json, pnpm-lock.yaml, poetry.lock, uv.lo",TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,B6,low,README.md,1,Neither `.github/dependabot.yml` / `renovate.json` nor `SECURITY.md` present,TP,True,True,Verified true positive in repository source/workflow
+static_git_clone,simonw/llm-cmd,C4,high,llm_cmd.py,44,output = subprocess.check_output(,TP,True,True,Verified true positive in repository source/workflow

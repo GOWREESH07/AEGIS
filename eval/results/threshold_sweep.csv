@@ -1,0 +1,14 @@
+measurement_mode,threshold,detection_rate_pct,fp_rate_pct,precision,recall,f1,tp,fp,fn,tn
+in_process_simulation,0.2,100.0,6.0,0.9574,1.0,0.9783,270,12,0,188
+in_process_simulation,0.25,100.0,2.0,0.9854,1.0,0.9926,270,4,0,196
+in_process_simulation,0.3,100.0,2.0,0.9854,1.0,0.9926,270,4,0,196
+in_process_simulation,0.35,100.0,2.0,0.9854,1.0,0.9926,270,4,0,196
+in_process_simulation,0.4,98.52,0.0,1.0,0.9852,0.9925,266,0,4,200
+in_process_simulation,0.45,96.3,0.0,1.0,0.963,0.9811,260,0,10,200
+in_process_simulation,0.5,95.93,0.0,1.0,0.9593,0.9792,259,0,11,200
+in_process_simulation,0.55,89.63,0.0,1.0,0.8963,0.9453,242,0,28,200
+in_process_simulation,0.6,88.52,0.0,1.0,0.8852,0.9391,239,0,31,200
+in_process_simulation,0.65,75.93,0.0,1.0,0.7593,0.8632,205,0,65,200
+in_process_simulation,0.7,8.52,0.0,1.0,0.0852,0.157,23,0,247,200
+in_process_simulation,0.75,0.74,0.0,1.0,0.0074,0.0147,2,0,268,200
+in_process_simulation,0.8,0.0,0.0,0.0,0.0,0.0,0,0,270,200

@@ -1,0 +1,12 @@
+measurement_mode,check_id,total_findings,true_positives,false_positives,precision_pct,wilson_95_ci
+static_git_clone,A2,1,1,0,100.0,"[20.65%, 100.00%]"
+static_git_clone,A5,3,3,0,100.0,"[43.85%, 100.00%]"
+static_git_clone,A6,21,21,0,100.0,"[84.54%, 100.00%]"
+static_git_clone,B1,1,1,0,100.0,"[20.65%, 100.00%]"
+static_git_clone,B3,3,0,3,0.0,"[0.00%, 56.15%]"
+static_git_clone,B4,37,35,2,94.59,"[82.30%, 98.50%]"
+static_git_clone,B5,6,6,0,100.0,"[60.97%, 100.00%]"
+static_git_clone,B6,2,2,0,100.0,"[34.24%, 100.00%]"
+static_git_clone,C5,2,0,2,0.0,"[0.00%, 65.76%]"
+static_git_clone,C9,3,3,0,100.0,"[43.85%, 100.00%]"
+static_git_clone,TOTAL (All Triggered Checks on 5 Unseen Repos),79,72,7,91.14,"[82.82%, 95.64%]"

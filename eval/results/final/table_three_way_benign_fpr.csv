@@ -1,0 +1,5 @@
+measurement_mode,dataset,windows,false_positives,true_negatives,fpr_pct,fpr_ci95_low_pct,fpr_ci95_high_pct,precision,recall,recall_ci95_low_pct,recall_ci95_high_pct,f1
+in_process_simulation,"Set 1: Original Benign Replay Set (seed=5000+i, Unmodified v2.1 Council)",200,4,196,2.0,0.78,5.03,0.9854,1.0,98.6,100.0,0.9926
+in_process_simulation,"Set 2: Held-Out Benign Replay Set (seed=9000+17i, Unmodified v2.1 Council)",250,17,233,6.8,4.29,10.62,0.9408,1.0,98.6,100.0,0.9695
+in_process_simulation,"Set 3 (Pre-Fix): Third Independent Benign Set (seed=15000+23i, Unmodified v2.1 Council)",250,17,233,6.8,4.29,10.62,0.9408,1.0,98.6,100.0,0.9695
+in_process_simulation,"Set 3 (Post-Fix): Third Independent Benign Set (seed=15000+23i, With Proposed v2.2 Fixes)",250,0,250,0.0,0.0,1.51,1.0,1.0,98.6,100.0,1.0

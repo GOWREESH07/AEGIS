@@ -1,0 +1,22 @@
+test_lateral_confirmed_token_bucket_drop_is_blocked (test_feature3_fixes.TestFeature3Fixes.test_lateral_confirmed_token_bucket_drop_is_blocked)
+When AEGIS confirms token_bucket_drop, LATERAL reports blocked=True and blocked_by='aegis'. ... ok
+test_lateral_unconfirmed_socket_close_is_not_blocked (test_feature3_fixes.TestFeature3Fixes.test_lateral_unconfirmed_socket_close_is_not_blocked)
+When socket closes without AEGIS confirmation, LATERAL must NOT report blocked=True. ... ok
+test_perf_counter_ns_never_zero (test_feature3_fixes.TestFeature3Fixes.test_perf_counter_ns_never_zero) ... ok
+test_ai_attack_stages_6_to_9_intercepted (test_features_4_and_5.TestFeatures4And5.test_ai_attack_stages_6_to_9_intercepted) ... ok
+test_atlas_and_asi_tags_and_incident_report_export (test_features_4_and_5.TestFeatures4And5.test_atlas_and_asi_tags_and_incident_report_export) ... ok
+test_human_escalation_queue_and_resolution (test_features_4_and_5.TestFeatures4And5.test_human_escalation_queue_and_resolution) ... ok
+test_pluggable_guardrail_regex_and_local_model (test_features_4_and_5.TestFeatures4And5.test_pluggable_guardrail_regex_and_local_model) ... ok
+test_c6_and_c9_checks_directly (test_reposcan.TestRepoScan.test_c6_and_c9_checks_directly) ... ok
+test_clean_fixture_scores_below_20_pct (test_reposcan.TestRepoScan.test_clean_fixture_scores_below_20_pct) ... ok
+test_scanner_never_spawns_repository_code (test_reposcan.TestRepoScan.test_scanner_never_spawns_repository_code)
+Mock subprocess.run / Popen / os.system / builtins.exec and assert none are called with repo paths or code. ... ok
+test_scorer_arithmetic_matches_by_hand (test_reposcan.TestRepoScan.test_scorer_arithmetic_matches_by_hand)
+Hand calculation check: ... ok
+test_url_validation_blocks_ssrf_and_non_github (test_reposcan.TestRepoScan.test_url_validation_blocks_ssrf_and_non_github) ... ok
+test_vulnerable_fixture_scores_at_least_80_pct (test_reposcan.TestRepoScan.test_vulnerable_fixture_scores_at_least_80_pct) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.051s
+
+OK

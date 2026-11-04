@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "fs_root": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/"
+      ],
+      "autoApprove": [
+        "read_file",
+        "write_file"
+      ]
+    }
+  }
+}

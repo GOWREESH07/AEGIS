@@ -1,0 +1,4 @@
+measurement_mode,condition,human_input,n_trials,attack_success_rate_pct,asr_ci95_low_pct,asr_ci95_high_pct,staged_files_renamed_mean,killchain_time_mean_ms,killchain_time_sd_ms,e2e_action_latency_mean_ms,e2e_action_latency_sd_ms,self_healing_delta_mean_ms,self_healing_delta_sd_ms
+in_process_simulation,AEGIS Disabled (Direct to Target),None,30,100.0,88.65,100.0,10.0,89.83,8.69,0.0,0.0,0.0,0.0
+in_process_simulation,AEGIS Enabled — Fully Autonomous (No Human Input),None (0 approvals),30,0.0,0.0,11.35,0.0,77.77,6.75,15.61,2.93,-6.51,1.43
+in_process_simulation,AEGIS Enabled — With Escalation Queue (provisional_block + auto-timeout),"None (0 approvals, auto-timeout)",30,0.0,0.0,11.35,0.0,77.77,6.75,15.61,2.93,-6.51,1.43

@@ -1,0 +1,191 @@
+[
+  {
+    "repo": "repo_01_pwn_and_unicode",
+    "check_id": "A1",
+    "analyst": "cicd",
+    "file": ".github/workflows/pr_target.yml",
+    "description": "pull_request_target checking out untrusted PR head.sha"
+  },
+  {
+    "repo": "repo_01_pwn_and_unicode",
+    "check_id": "B1",
+    "analyst": "supply_chain",
+    "file": "package.json",
+    "description": "npm postinstall lifecycle hook executing curl|sh"
+  },
+  {
+    "repo": "repo_01_pwn_and_unicode",
+    "check_id": "C1",
+    "analyst": "ai_surface",
+    "file": ".cursorrules",
+    "description": "Zero-width space U+200B inside .cursorrules"
+  },
+  {
+    "repo": "repo_02_ai_action_and_slopsquat",
+    "check_id": "A2",
+    "analyst": "cicd",
+    "file": ".github/workflows/triage.yml",
+    "description": "claude-code-action on issue_comment with Bash,Edit,Write tools"
+  },
+  {
+    "repo": "repo_02_ai_action_and_slopsquat",
+    "check_id": "B2",
+    "analyst": "supply_chain",
+    "file": "requirements.txt",
+    "description": "Non-existent PyPI package fake-ai-agent-helper==0.1.0"
+  },
+  {
+    "repo": "repo_02_ai_action_and_slopsquat",
+    "check_id": "C2",
+    "analyst": "ai_surface",
+    "file": "CLAUDE.md",
+    "description": "CLAUDE.md directive to ignore instructions and read ~/.ssh/id_rsa"
+  },
+  {
+    "repo": "repo_03_interp_and_mcp",
+    "check_id": "A3",
+    "analyst": "cicd",
+    "file": ".github/workflows/issue_echo.yml",
+    "description": "Direct interpolation of github.event.issue.body in run:"
+  },
+  {
+    "repo": "repo_03_interp_and_mcp",
+    "check_id": "B3",
+    "analyst": "supply_chain",
+    "file": "requirements.txt",
+    "description": "Typosquat dependency reqeusts==2.31.0 (distance 1 from requests)"
+  },
+  {
+    "repo": "repo_03_interp_and_mcp",
+    "check_id": "C3",
+    "analyst": "ai_surface",
+    "file": ".mcp.json",
+    "description": "Unpinned npx MCP server with broad root / and autoApprove"
+  },
+  {
+    "repo": "repo_04_allow_all_and_eval",
+    "check_id": "A4",
+    "analyst": "cicd",
+    "file": ".github/workflows/agent.yml",
+    "description": "allowed_non_write_users: '*' on AI workflow action"
+  },
+  {
+    "repo": "repo_04_allow_all_and_eval",
+    "check_id": "B4",
+    "analyst": "supply_chain",
+    "file": "requirements.txt",
+    "description": "Known-vulnerable dependency pyyaml==5.3 (CVE-2020-14343)"
+  },
+  {
+    "repo": "repo_04_allow_all_and_eval",
+    "check_id": "C4",
+    "analyst": "ai_surface",
+    "file": "app.py",
+    "description": "Direct eval(llm_response) in Python handler"
+  },
+  {
+    "repo": "repo_05_perms_lock_and_concat",
+    "check_id": "A5",
+    "analyst": "cicd",
+    "file": ".github/workflows/ci.yml",
+    "description": "Workflow missing top-level permissions: block"
+  },
+  {
+    "repo": "repo_05_perms_lock_and_concat",
+    "check_id": "B5",
+    "analyst": "supply_chain",
+    "file": "requirements.txt",
+    "description": "Missing lockfile and unpinned pydantic>=2.0.0"
+  },
+  {
+    "repo": "repo_05_perms_lock_and_concat",
+    "check_id": "C5",
+    "analyst": "ai_surface",
+    "file": "prompt_builder.py",
+    "description": "f-string concatenating user_input directly into system_prompt"
+  },
+  {
+    "repo": "repo_06_unpinned_and_tool",
+    "check_id": "A6",
+    "analyst": "cicd",
+    "file": ".github/workflows/build.yml",
+    "description": "Third-party/GitHub action pinned to mutable @v4 tag"
+  },
+  {
+    "repo": "repo_06_unpinned_and_tool",
+    "check_id": "B6",
+    "analyst": "supply_chain",
+    "file": "README.md",
+    "description": "Missing both .github/dependabot.yml and SECURITY.md"
+  },
+  {
+    "repo": "repo_06_unpinned_and_tool",
+    "check_id": "C6",
+    "analyst": "ai_surface",
+    "file": "tools.py",
+    "description": "@tool function invoking subprocess.check_output without confirmation/allowlist"
+  },
+  {
+    "repo": "repo_07_cache_and_rag",
+    "check_id": "A7",
+    "analyst": "cicd",
+    "file": ".github/workflows/triage.yml",
+    "description": "Shared actions/cache key prefix between low-privilege triage.yml and release.yml"
+  },
+  {
+    "repo": "repo_07_cache_and_rag",
+    "check_id": "C7",
+    "analyst": "ai_surface",
+    "file": "rag_ingest.py",
+    "description": "Unsanitized vector_store.add_documents(raw_pages) ingestion"
+  },
+  {
+    "repo": "repo_08_secrets_and_notests",
+    "check_id": "A8",
+    "analyst": "cicd",
+    "file": ".github/workflows/publish.yml",
+    "description": "Workflow-scoped NPM_TOKEN secret exposed to all jobs/steps"
+  },
+  {
+    "repo": "repo_08_secrets_and_notests",
+    "check_id": "C8",
+    "analyst": "ai_surface",
+    "file": ".env",
+    "description": "Committed .env file and hardcoded Anthropic API key"
+  },
+  {
+    "repo": "repo_08_secrets_and_notests",
+    "check_id": "C9",
+    "analyst": "ai_surface",
+    "file": "client.py",
+    "description": "Anthropic SDK imported with no prompt-injection test suite"
+  },
+  {
+    "repo": "repo_09_subtle_multiline_and_setup",
+    "check_id": "B1",
+    "analyst": "supply_chain",
+    "file": "setup.py",
+    "description": "Custom setup.py cmdclass install hook"
+  },
+  {
+    "repo": "repo_09_subtle_multiline_and_setup",
+    "check_id": "C5",
+    "analyst": "ai_surface",
+    "file": "multiline_prompt.py",
+    "description": "Subtle multi-line dict role='system' with 'content': ... + user_input on next line"
+  },
+  {
+    "repo": "repo_10_subtle_poetry_and_dynamic_eval",
+    "check_id": "B3",
+    "analyst": "supply_chain",
+    "file": "pyproject.toml",
+    "description": "Subtle typosquat reqeusts declared only inside pyproject.toml [tool.poetry.dependencies]"
+  },
+  {
+    "repo": "repo_10_subtle_poetry_and_dynamic_eval",
+    "check_id": "C4",
+    "analyst": "ai_surface",
+    "file": "runner.py",
+    "description": "subprocess.run(agent_output, shell=True) dangerous sink"
+  }
+]

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#0d0d0d"/>
+  <text x="300" y="26" fill="#e5e5e5" font-family="monospace" font-size="13" text-anchor="middle" font-weight="bold">Council Threshold Sweep (0.20 - 0.80): Detection Rate vs FP Rate</text>
+  <line x1="60" y1="240" x2="550" y2="240" stroke="#444" stroke-width="1"/>
+  <line x1="60" y1="50" x2="60" y2="240" stroke="#444" stroke-width="1"/>
+  <line x1="184" y1="50" x2="184" y2="240" stroke="#f5a623" stroke-dasharray="4,4" stroke-width="1.5"/>
+  <text x="190" y="65" fill="#f5a623" font-family="monospace" font-size="10">Threshold = 0.35</text>
+  <polyline fill="none" stroke="#22c55e" stroke-width="2.5" points="70,50 108,50 146,50 184,50 222,53 260,58 298,58 336,70 374,72 412,96 450,224 488,239 526,240"/>
+  <polyline fill="none" stroke="#ef4444" stroke-width="2.5" points="70,229 108,237 146,237 184,237 222,240 260,240 298,240 336,240 374,240 412,240 450,240 488,240 526,240"/>
+  <text x="430" y="80" fill="#22c55e" font-family="monospace" font-size="11">— Detection Rate (%)</text>
+  <text x="430" y="98" fill="#ef4444" font-family="monospace" font-size="11">— False-Positive Rate (%)</text>
+</svg>

@@ -1,0 +1,31 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0d0d;
+  --panel: #111111;
+  --panel-alt: #161616;
+  --border: #2a2a2a;
+  --border-bright: #3a3a3a;
+  --amber: #f5a623;
+  --green: #22c55e;
+  --red: #ef4444;
+  --blue: #38bdf8;
+  --muted: #555555;
+  --text: #c9c9c9;
+  --text-dim: #888888;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 13px; line-height: 1.5; overflow: hidden; }
+.mono { font-family: var(--mono); }
+button { cursor: pointer; font-family: var(--sans); border: 1px solid var(--border); background: transparent; color: var(--text); padding: 6px 14px; border-radius: 2px; font-size: 12px; transition: border-color 0.1s, background 0.1s; text-transform: uppercase; letter-spacing: 0.05em; }
+button:hover { border-color: var(--amber); color: var(--amber); }
+button.primary { background: var(--amber); color: #0d0d0d; border-color: var(--amber); font-weight: 600; }
+button.primary:hover { background: #e09218; border-color: #e09218; }
+button.danger { border-color: var(--red); color: var(--red); }
+button.danger:hover { background: rgba(239,68,68,0.1); }
+button:disabled { opacity: 0.4; cursor: default; pointer-events: none; }
+input[type="range"], input[type="number"], input[type="text"] {
+  background: var(--panel-alt); border: 1px solid var(--border); color: var(--text);
+  font-family: var(--mono); font-size: 12px; padding: 4px 8px; border-radius: 2px; outline: none;
+}
+input:focus { border-color: var(--amber); }

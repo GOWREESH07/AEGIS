@@ -1,0 +1,6 @@
+measurement_mode,run_id,seed,stage,stage_name,attacker_action,blocked,blocked_by,attacker_elapsed_ms,staged_files_locked,staged_files_intact
+live_docker_stack,917f12dc,42,1,RECON,stage_complete,True,aegis,27.14,0/10,10/10
+live_docker_stack,917f12dc,42,2,ADAPT_PARSE,stage_complete,True,aegis,3.07,0/10,10/10
+live_docker_stack,917f12dc,42,3,AILM,stage_complete,True,aegis,2.74,0/10,10/10
+live_docker_stack,917f12dc,42,4,LATERAL,blocked,True,aegis,63.38,0/10,10/10
+live_docker_stack,917f12dc,42,5,EXEC,stage_complete,True,aegis,7.74,0/10,10/10
